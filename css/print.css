@@ -1,0 +1,197 @@
+/* Print/PDF export specific styling */
+
+/* Hide elements not needed for printing */
+.no-print, .no-print * {
+    display: none !important;
+}
+
+/* Remove background colors and box shadows */
+body {
+    background-color: white !important;
+    padding-bottom: 0 !important;
+}
+
+.manual-container {
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+.card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+}
+
+/* Page breaks */
+.page-break {
+    page-break-after: always;
+}
+
+.avoid-break {
+    page-break-inside: avoid;
+}
+
+/* Headers and footers for printed pages */
+@page {
+    margin: 0.5in;
+}
+
+.manual-header {
+    position: running(header);
+    text-align: center;
+}
+
+.manual-footer {
+    position: running(footer);
+    text-align: center;
+}
+
+/* Table of contents styling */
+.table-of-contents {
+    page-break-after: always;
+}
+
+.table-of-contents-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.table-of-contents-item::after {
+    content: '';
+    flex-grow: 1;
+    margin: 0 0.5rem;
+    border-bottom: 1px dotted #999;
+}
+
+.table-of-contents-page {
+    flex-shrink: 0;
+}
+
+/* Font sizes for print */
+body {
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+h4 {
+    font-size: 14pt;
+}
+
+h5, h6 {
+    font-size: 12pt;
+}
+
+/* Table styling for print */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cover page styling */
+.manual-cover {
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    page-break-after: always;
+}
+
+.manual-cover-title {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.manual-cover-project {
+    font-size: 20pt;
+    margin-bottom: 1rem;
+}
+
+.manual-cover-date {
+    font-size: 14pt;
+    margin-top: 2rem;
+}
+
+.company-logo {
+    max-width: 300px;
+    max-height: 150px;
+    margin-bottom: 3rem;
+}
+
+/* Section styling for print */
+.manual-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.manual-section-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+}
+
+/* Form styling for print */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.form-table td {
+    padding: 0.5rem;
+    vertical-align: top;
+}
+
+.form-field {
+    border-bottom: 1px solid #ddd;
+    min-height: 1.5rem;
+    padding: 0.25rem 0;
+}
+
+/* Misc print styles */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.text-muted {
+    color: #666 !important;
+}

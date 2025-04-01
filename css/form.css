@@ -1,0 +1,131 @@
+/* CSS for the multi-step form */
+
+/* Hide all form sections initially */
+.form-section {
+    display: none;
+}
+
+/* Show only the first form section */
+.form-section:first-of-type {
+    display: block;
+}
+
+/* Navigation buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Initially hide the submit button */
+.form-navigation .submit {
+    display: none;
+}
+
+/* Previous and Next buttons hover effects */
+.form-navigation .previous:hover,
+.form-navigation .next:hover {
+    transform: translateY(-2px);
+}
+
+/* Progress bar styling */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Form validation styling */
+.was-validated .form-control:valid {
+    border-color: #198754;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Form section transitions */
+.form-section {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.form-section.fade-out {
+    opacity: 0;
+}
+
+.form-section.fade-in {
+    opacity: 1;
+}
+
+/* Form section styling */
+.form-section h3 {
+    margin-bottom: 1.5rem;
+    color: #0d6efd;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+/* Table styling for staff information */
+.table input.form-control {
+    margin: 0;
+}
+
+.table tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Form check switches */
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.form-switch .form-check-input:focus {
+    border-color: rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-switch .form-check-input {
+    width: 2em;
+}
+
+/* File upload styling */
+.form-control[type="file"] {
+    padding: 0.375rem 0.75rem;
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-navigation {
+        flex-direction: column;
+    }
+    
+    .form-navigation button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+}

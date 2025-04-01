@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Construction Manual - Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-hard-hat me-2"></i>
+                Construction Manual Generator
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-muted">Construction Project Manual Generator &copy; 2025</span>
+        </div>
+    </footer>
+
+    <!-- Save Project Modal -->
+    <div class="modal fade" id="saveProjectModal" tabindex="-1" aria-labelledby="saveProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saveProjectModalLabel">Save Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="projectSaveName" class="form-label">Project Name</label>
+                        <input type="text" class="form-control" id="projectSaveName" name="projectSaveName" required>
+                        <div class="form-text">Enter a name to identify this saved project.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmSaveProject">Save Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/data-manager.js"></script>
+</body>
+</html>="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="form.html">Create Manual</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1 class="mb-4">Create Construction Project Manual</h1>
+        
+        <div class="progress mb-4">
+            <div id="formProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+
+        <form id="manualForm" class="needs-validation" novalidate>
+            <!-- Multi-step form navigation -->
+            <div class="form-navigation mb-4">
+                <button type="button" class="btn btn-secondary previous">&laquo; Previous</button>
+                <button type="button" class="btn btn-primary next">Next &raquo;</button>
+                <button type="button" class="btn btn-success submit">Generate Manual</button>
+                <button type="button" id="saveProject" class="btn btn-info">Save Progress</button>
+            </div>
+
+            <!-- Step 1: Project Information -->
+            <div class="form-section">
+                <h3>Project Information</h3>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="companyName" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="companyName" name="companyName" required>
+                                <div class="invalid-feedback">
+                                    Please enter your company name.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="projectTitle" class="form-label">Project Title</label>
+                                <input type="text" class="form-control" id="projectTitle" name="projectTitle" required>
+                                <div class="invalid-feedback">
+                                    Please enter the project title.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="owner" class="form-label">Owner</label>
+                                <input type="text" class="form-control" id="owner" name="owner" required>
+                                <div class="invalid-feedback">
+                                    Please enter the project owner.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="developerInCharge" class="form-label">Developer in Charge</label>
+                                <input type="text" class="form-control" id="developerInCharge" name="developerInCharge">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="architect" class="form-label">Architect</label>
+                                <input type="text" class="form-control" id="architect" name="architect" required>
+                                <div class="invalid-feedback">
+                                    Please enter the architect.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="architectInCharge" class="form-label">Architect in Charge</label>
+                                <input type="text" class="form-control" id="architectInCharge" name="architectInCharge">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="workHours" class="form-label">Work Hours</label>
+                                <input type="text" class="form-control" id="workHours" name="workHours" 
+                                      value="Normal work hours are from 7:00 a.m. to 3:30 p.m. Monday thru Friday">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="completionDates" class="form-label">Completion Dates</label>
+                                <textarea class="form-control" id="completionDates" name="completionDates" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Contact Information -->
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="mailingAddress" class="form-label">Mailing Address</label>
+                                <textarea class="form-control" id="mailingAddress" name="mailingAddress" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter the mailing address.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="shippingAddress" class="form-label">Shipping Address</label>
+                                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter the shipping address.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="telephoneNumber" class="form-label">Telephone Number</label>
+                                <input type="tel" class="form-control" id="telephoneNumber" name="telephoneNumber" required>
+                                <div class="invalid-feedback">
+                                    Please enter a telephone number.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="faxNumber" class="form-label">Fax Number</label>
+                                <input type="tel" class="form-control" id="faxNumber" name="faxNumber">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Project Staff -->
+            <div class="form-section">
+                <h3>Project Staff</h3>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Project Executive</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectExecutive" id="projectExecutive">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Manager</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectManager" id="projectManager" required>
+                                            <div class="invalid-feedback">Project Manager is required</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Superintendent</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectSuperintendent" id="projectSuperintendent" required>
+                                            <div class="invalid-feedback">Project Superintendent is required</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Engineer</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectEngineer1" id="projectEngineer1">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Engineer</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectEngineer2" id="projectEngineer2">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Engineer</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectEngineer3" id="projectEngineer3">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Field Engineer</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="fieldEngineer" id="fieldEngineer">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Project Accountant</td>
+                                        <td>
+                                            <input type="text" class="form-control" name="projectAccountant" id="projectAccountant">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-outline-primary" id="addStaffMember">
+                                <i class="fas fa-plus"></i> Add Additional Staff Member
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Document Sections -->
+            <div class="form-section">
+                <h3>Document Sections</h3>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Select which sections to include in your project manual.
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeGeneralInfo" name="includeGeneralInfo" checked>
+                            <label class="form-check-label" for="includeGeneralInfo">General Information</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeProjectStaff" name="includeProjectStaff" checked>
+                            <label class="form-check-label" for="includeProjectStaff">Project Staff, Job Information and Policy</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeMiscInfo" name="includeMiscInfo" checked>
+                            <label class="form-check-label" for="includeMiscInfo">Miscellaneous Information</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeSubcontractorPersonnel" name="includeSubcontractorPersonnel" checked>
+                            <label class="form-check-label" for="includeSubcontractorPersonnel">List of Subcontractor Key Personnel</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeRulesRegulations" name="includeRulesRegulations" checked>
+                            <label class="form-check-label" for="includeRulesRegulations">Rules and Regulations</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeBeforeWork" name="includeBeforeWork" checked>
+                            <label class="form-check-label" for="includeBeforeWork">Before You Start Work</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeStoredMaterials" name="includeStoredMaterials" checked>
+                            <label class="form-check-label" for="includeStoredMaterials">Stored Materials</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeInsurance" name="includeInsurance" checked>
+                            <label class="form-check-label" for="includeInsurance">Certificate of Insurance</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeSubmittals" name="includeSubmittals" checked>
+                            <label class="form-check-label" for="includeSubmittals">Submittals - Shop Drawings, Samples, Manufacturer's Literature</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeCostBreakdown" name="includeCostBreakdown" checked>
+                            <label class="form-check-label" for="includeCostBreakdown">Cost Breakdown</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includePayRequisition" name="includePayRequisition" checked>
+                            <label class="form-check-label" for="includePayRequisition">Monthly Pay Requisition</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeChecklist" name="includeChecklist" checked>
+                            <label class="form-check-label" for="includeChecklist">Checklist for Payment Requisitions</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeManpowerReport" name="includeManpowerReport" checked>
+                            <label class="form-check-label" for="includeManpowerReport">Subcontractor's Daily Manpower Report</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeRFI" name="includeRFI" checked>
+                            <label class="form-check-label" for="includeRFI">Request for Information Form</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeChangeOrders" name="includeChangeOrders" checked>
+                            <label class="form-check-label" for="includeChangeOrders">Proposals and Change Orders</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeSafety" name="includeSafety" checked>
+                            <label class="form-check-label" for="includeSafety">Safety</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeSafetyCompliance" name="includeSafetyCompliance" checked>
+                            <label class="form-check-label" for="includeSafetyCompliance">Compliance with Safety Program</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeAcknowledgment" name="includeAcknowledgment" checked>
+                            <label class="form-check-label" for="includeAcknowledgment">Acknowledge of Receipt and Compliance</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeCleanup" name="includeCleanup" checked>
+                            <label class="form-check-label" for="includeCleanup">Clean-Up</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="includeReceipt" name="includeReceipt" checked>
+                            <label class="form-check-label" for="includeReceipt">Subcontractor's Acknowledgment of Receipt</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Custom Content -->
+            <div class="form-section">
+                <h3>Custom Content</h3>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="customParkingRules" class="form-label">Parking Rules</label>
+                            <textarea class="form-control" id="customParkingRules" name="customParkingRules" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="customHoistingInfo" class="form-label">Hoisting Information</label>
+                            <textarea class="form-control" id="customHoistingInfo" name="customHoistingInfo" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="additionalSafety" class="form-label">Additional Safety Requirements</label>
+                            <textarea class="form-control" id="additionalSafety" name="additionalSafety" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="additionalNotes" class="form-label">Additional Notes or Instructions</label>
+                            <textarea class="form-control" id="additionalNotes" name="additionalNotes" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="includeMap" name="includeMap">
+                            <label class="form-check-label" for="includeMap">
+                                Include Map (will be added from file upload)
+                            </label>
+                        </div>
+                        
+                        <div class="mb-3" id="mapUploadSection" style="display: none;">
+                            <label for="mapUpload" class="form-label">Upload Map Image</label>
+                            <input class="form-control" type="file" id="mapUpload" name="mapUpload" accept="image/*">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="customLogo" class="form-label">Upload Company Logo (optional)</label>
+                            <input class="form-control" type="file" id="customLogo" name="customLogo" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden input for saved data ID -->
+            <input type="hidden" id="savedDataId" name="savedDataId">
+
+            <!-- Form navigation (bottom) -->
+            <div class="form-navigation mb-4">
+                <button type="button" class="btn btn-secondary previous">&laquo; Previous</button>
+                <button type="button" class="btn btn-primary next">Next &raquo;</button>
+                <button type="button" class="btn btn-success submit">Generate Manual</button>
+                <button type="button" id="saveProjectBottom" class="btn btn-info">Save Progress</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class

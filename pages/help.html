@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help - Construction Manual Generator</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <i class="fas fa-hard-hat me-2"></i>
+          Construction Manual Generator
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="form.html">Create Manual</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="help.html"
+                >Help</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mt-4">
+      <h1>Help Guide</h1>
+
+      <div class="row mt-4">
+        <div class="col-md-3">
+          <div class="list-group" id="helpTabs">
+            <a
+              class="list-group-item list-group-item-action active"
+              id="getting-started-tab"
+              data-bs-toggle="list"
+              href="#getting-started"
+              role="tab"
+              >Getting Started</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              id="filling-form-tab"
+              data-bs-toggle="list"
+              href="#filling-form"
+              role="tab"
+              >Filling Out the Form</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              id="generate-manual-tab"
+              data-bs-toggle="list"
+              href="#generate-manual"
+              role="tab"
+              >Generating the Manual</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              id="pdf-export-tab"
+              data-bs-toggle="list"
+              href="#pdf-export"
+              role="tab"
+              >Exporting to PDF</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              id="saving-projects-tab"
+              data-bs-toggle="list"
+              href="#saving-projects"
+              role="tab"
+              >Saving Projects</a
+            >
+            <a
+              class="list-group-item list-group-item-action"
+              id="troubleshooting-tab"
+              data-bs-toggle="list"
+              href="#troubleshooting"
+              role="tab"
+              >Troubleshooting</a
+            >
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div
+              class="tab-pane fade show active"
+              id="getting-started"
+              role="tabpanel"
+            >
+              <div class="card">
+                <div class="card-header">
+                  <h3>Getting Started</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Welcome to the Construction Project Manual Generator</h4>
+                  <p>
+                    This tool allows you to easily create customized
+                    construction project startup manuals for your projects.
+                    Follow these steps to get started:
+                  </p>
+
+                  <ol>
+                    <li>
+                      From the home page, click on "Create New Manual" to start
+                      a new project manual.
+                    </li>
+                    <li>
+                      Fill out the form with your project details across all
+                      sections.
+                    </li>
+                    <li>
+                      Preview your manual and make any necessary adjustments.
+                    </li>
+                    <li>
+                      Export your manual to PDF for distribution or print it
+                      directly.
+                    </li>
+                  </ol>
+
+                  <p>
+                    You can also save your progress at any time and return to
+                    complete it later by clicking the "Save Progress" button.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="filling-form" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Filling Out the Form</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Form Navigation</h4>
+                  <p>
+                    The form is divided into several sections to make it easier
+                    to complete:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <strong>Project Information</strong> - Basic details about
+                      your project
+                    </li>
+                    <li>
+                      <strong>Contact Information</strong> - Addresses and
+                      contact details
+                    </li>
+                    <li>
+                      <strong>Project Staff</strong> - Information about key
+                      personnel
+                    </li>
+                    <li>
+                      <strong>Document Sections</strong> - Select which sections
+                      to include in your manual
+                    </li>
+                    <li>
+                      <strong>Custom Content</strong> - Add any additional
+                      information specific to your project
+                    </li>
+                  </ul>
+
+                  <p>
+                    Use the "Previous" and "Next" buttons to navigate between
+                    sections. Required fields are marked with an asterisk (*).
+                  </p>
+
+                  <h4>Tips for Completing the Form</h4>
+                  <ul>
+                    <li>
+                      You can add additional staff members if needed by clicking
+                      the "Add Additional Staff Member" button.
+                    </li>
+                    <li>
+                      All sections are enabled by default, but you can disable
+                      any sections you don't need.
+                    </li>
+                    <li>
+                      For custom content, you can add specific information about
+                      parking, hoisting, safety requirements, etc.
+                    </li>
+                    <li>
+                      You can upload a site map and your company logo to be
+                      included in the manual.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="generate-manual" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Generating the Manual</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Previewing Your Manual</h4>
+                  <p>
+                    Once you've completed all sections of the form, click the
+                    "Generate Manual" button. This will create a preview of your
+                    manual with all the information you've provided.
+                  </p>
+
+                  <p>In the preview screen, you can:</p>
+                  <ul>
+                    <li>
+                      Review the entire manual to ensure all information is
+                      correct
+                    </li>
+                    <li>
+                      Make changes by clicking the "Edit" button to return to
+                      the form
+                    </li>
+                    <li>Export the manual to PDF or print it directly</li>
+                  </ul>
+
+                  <h4>Manual Structure</h4>
+                  <p>
+                    The generated manual follows industry standards and
+                    includes:
+                  </p>
+                  <ul>
+                    <li>A cover page with your company logo (if provided)</li>
+                    <li>A table of contents with page numbers</li>
+                    <li>All the sections you've selected to include</li>
+                    <li>Appropriate headers, footers, and page numbering</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="pdf-export" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Exporting to PDF</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Creating a PDF Document</h4>
+                  <p>To export your manual to PDF:</p>
+
+                  <ol>
+                    <li>
+                      After generating your manual, click the "Export to PDF"
+                      button in the preview screen.
+                    </li>
+                    <li>
+                      A dialog will appear allowing you to set options for your
+                      PDF (optional).
+                    </li>
+                    <li>Click "Export" to create the PDF document.</li>
+                    <li>The PDF will be downloaded to your device.</li>
+                  </ol>
+
+                  <h4>PDF Export Options</h4>
+                  <p>When exporting to PDF, you can customize the following:</p>
+                  <ul>
+                    <li>Page size (Letter, Legal, A4, etc.)</li>
+                    <li>Orientation (Portrait or Landscape)</li>
+                    <li>Margins</li>
+                  </ul>
+
+                  <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> The PDF export feature
+                    works best in modern browsers like Chrome, Firefox, Edge, or
+                    Safari.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="saving-projects" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Saving Projects</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Saving Your Progress</h4>
+                  <p>
+                    You can save your work at any time during the form
+                    completion process:
+                  </p>
+
+                  <ol>
+                    <li>Click the "Save Progress" button in the form.</li>
+                    <li>
+                      Enter a name for your project in the dialog that appears.
+                    </li>
+                    <li>Click "Save Project" to store your progress.</li>
+                  </ol>
+
+                  <h4>Loading Saved Projects</h4>
+                  <p>To load a previously saved project:</p>
+
+                  <ol>
+                    <li>From the home page, click "Load Saved Project".</li>
+                    <li>Select the project you want to load from the list.</li>
+                    <li>Click "Load" to open the project.</li>
+                  </ol>
+
+                  <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Saved projects
+                    are stored in your browser's local storage. Clearing your
+                    browser data will delete saved projects.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="troubleshooting" role="tabpanel">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Troubleshooting</h3>
+                </div>
+                <div class="card-body">
+                  <h4>Common Issues and Solutions</h4>
+
+                  <div class="accordion" id="troubleshootingAccordion">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="true"
+                          aria-controls="collapseOne"
+                        >
+                          Form won't submit
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#troubleshootingAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>
+                            If the form won't submit, check for the following:
+                          </p>
+                          <ul>
+                            <li>Make sure all required fields are completed</li>
+                            <li>
+                              Check for error messages indicating what needs to
+                              be fixed
+                            </li>
+                            <li>Try refreshing the page and trying again</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                        >
+                          PDF export issues
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#troubleshootingAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>If you're having trouble exporting to PDF:</p>
+                          <ul>
+                            <li>
+                              Make sure you're using a modern browser (Chrome,
+                              Firefox, Edge, or Safari)
+                            </li>
+                            <li>
+                              Try with a smaller file size if you uploaded large
+                              images
+                            </li>
+                            <li>
+                              If it still fails, try the Print option and select
+                              "Save as PDF" in your browser's print dialog
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          Lost saved projects
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#troubleshootingAccordion"
+                      >
+                        <div class="accordion-body">
+                          <p>If you can't find your saved projects:</p>
+                          <ul>
+                            <li>
+                              Check if you're using the same browser where you
+                              saved them
+                            </li>
+                            <li>
+                              Make sure you haven't cleared your browser data
+                              recently
+                            </li>
+                            <li>
+                              Try checking if you're in private/incognito mode
+                              (saved data won't persist)
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4">
+                    <h4>Still Need Help?</h4>
+                    <p>
+                      If you're still experiencing issues, try the following:
+                    </p>
+                    <ul>
+                      <li>Restart your browser</li>
+                      <li>Clear your browser cache and try again</li>
+                      <li>Try using a different browser</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer mt-5 py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted"
+          >Construction Project Manual Generator &copy; 2025</span
+        >
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
